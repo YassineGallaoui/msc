@@ -1,0 +1,20 @@
+{
+  "name": "minimal-scss",
+  "version": "1.0.0",
+  "description": "A collection of basic SCSS utilities for grid, flexbox, positioning, text and more.",
+  "homepage": "https://github.com/YassineGallaoui/minimal-scss#readme",
+  "bugs": {
+    "url": "https://github.com/YassineGallaoui/minimal-scss/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YassineGallaoui/minimal-scss.git"
+  },
+  "license": "ISC",
+  "author": "Yassine Gallaoui",
+  "type": "commonjs",
+  "main": "scss/common.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
