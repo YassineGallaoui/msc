@@ -22,13 +22,29 @@ npm install @yassine-gallaoui/minimal-scss
 
 ## Usage
 
-### Import the complete library
+### Import pre-built CSS in JavaScript (Recommended)
+
+The easiest way to use minimal-scss is to import the pre-built CSS file in your main JavaScript file:
+
+```javascript
+// Import in your main JS file (e.g., main.js, app.js, common.js)
+import '@yassine-gallaoui/minimal-scss/dist/main.min.css';
+```
+
+This approach:
+- ✅ **Simple**: No build configuration needed
+- ✅ **Global**: All utility classes work everywhere in your HTML
+- ✅ **Performance**: Uses optimized, pre-built CSS
+- ✅ **No conflicts**: Avoids SCSS compilation issues
+- ✅ **Bundle integration**: Works with Vite, Webpack, Parcel, etc.
+
+### Import the complete library (SCSS)
 
 ```scss
 @use "@yassine-gallaoui/minimal-scss/scss/main";
 ```
 
-### Import pre-built CSS (alternative)
+### Import pre-built CSS (in SCSS/CSS files)
 
 ```scss
 @import "@yassine-gallaoui/minimal-scss/dist/main.min.css";
