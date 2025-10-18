@@ -2,6 +2,9 @@
   "name": "minimal-scss",
   "version": "1.0.0",
   "description": "A collection of basic SCSS utilities for grid, flexbox, positioning, text and more.",
+  "main": "dist/main.min.css",
+  "style": "dist/main.min.css",
+  "sass": "scss/main.scss",
   "homepage": "https://github.com/YassineGallaoui/minimal-scss#readme",
   "bugs": {
     "url": "https://github.com/YassineGallaoui/minimal-scss/issues"
@@ -10,11 +13,27 @@
     "type": "git",
     "url": "git+https://github.com/YassineGallaoui/minimal-scss.git"
   },
+  "files": [
+    "dist/",
+    "scss/"
+  ],
   "license": "ISC",
   "author": "Yassine Gallaoui",
-  "type": "commonjs",
-  "main": "scss/common.scss",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "sass --no-source-map --style=compressed scss/main.scss dist/main.min.css && sass --no-source-map --style=compressed scss/utils/_base.scss dist/base.min.css && sass --no-source-map --style=compressed scss/utils/_flex.scss dist/flex.min.css && sass --no-source-map --style=compressed scss/utils/_grid.scss dist/grid.min.css && sass --no-source-map --style=compressed scss/utils/_router.scss dist/router.min.css && sass --no-source-map --style=compressed scss/utils/_spacing.scss dist/spacing.min.css && sass --no-source-map --style=compressed scss/utils/_stats.scss dist/stats.min.css && sass --no-source-map --style=compressed scss/utils/_text.scss dist/text.min.css",
+    "watch": "sass --watch --no-source-map --style=compressed scss/:dist/ --output-suffix=.min",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "scss",
+    "css",
+    "grid",
+    "flexbox",
+    "spacing",
+    "utilities"
+  ],
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "sass": "^1.93.2"
   }
 }
