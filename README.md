@@ -1,6 +1,6 @@
 # Minimal SCSS
 
-A lightweight collection of SCSS utilities for modern web development. This library provides essential utility classes for grid systems, flexbox layouts, typography, spacing, and more.
+A lightweight collection of SCSS/css utilities for modern web development. This library provides essential utility classes for grid systems, flexbox layouts, typography, spacing, and more. This is not meant to have everything you need, each SCSS/css rule was added only after answering the question: "will I use this intensively?". If the answer is no, then you will not find that styling rule in this library.
 
 ## Features
 
@@ -17,7 +17,7 @@ A lightweight collection of SCSS utilities for modern web development. This libr
 ## Installation
 
 ```bash
-npm install minimal-scss
+npm install @yassine-gallaoui/minimal-scss
 ```
 
 ## Usage
@@ -25,20 +25,34 @@ npm install minimal-scss
 ### Import the complete library
 
 ```scss
-@use "minimal-scss/scss/common";
+@use "@yassine-gallaoui/minimal-scss/scss/main";
+```
+
+### Import pre-built CSS (alternative)
+
+```scss
+@import "@yassine-gallaoui/minimal-scss/dist/main.min.css";
 ```
 
 ### Import individual modules
 
 ```scss
-@use "minimal-scss/scss/utils/variables";
-@use "minimal-scss/scss/utils/base";
-@use "minimal-scss/scss/utils/grid";
-@use "minimal-scss/scss/utils/flex";
-@use "minimal-scss/scss/utils/text";
-@use "minimal-scss/scss/utils/spacing";
-@use "minimal-scss/scss/utils/router";
-@use "minimal-scss/scss/utils/stats";
+@use "@yassine-gallaoui/minimal-scss/scss/utils/variables";
+@use "@yassine-gallaoui/minimal-scss/scss/utils/base";
+@use "@yassine-gallaoui/minimal-scss/scss/utils/grid";
+@use "@yassine-gallaoui/minimal-scss/scss/utils/flex";
+@use "@yassine-gallaoui/minimal-scss/scss/utils/text";
+@use "@yassine-gallaoui/minimal-scss/scss/utils/spacing";
+@use "@yassine-gallaoui/minimal-scss/scss/utils/router";
+@use "@yassine-gallaoui/minimal-scss/scss/utils/stats";
+```
+
+### Import individual pre-built CSS modules
+
+```scss
+@import "@yassine-gallaoui/minimal-scss/dist/grid.min.css";
+@import "@yassine-gallaoui/minimal-scss/dist/flex.min.css";
+@import "@yassine-gallaoui/minimal-scss/dist/spacing.min.css";
 ```
 
 ## Breakpoints
@@ -172,7 +186,7 @@ Available options: `ac-start`, `ac-center`, `ac-end`, `ac-stretch`, `ac-between`
 <p class="fs-xl md-fs-2xl">Responsive text size</p>
 ```
 
-Available sizes: `3xs`, `2xs`, `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`, `4xl`, `5xl`, `6xl`
+Available sizes: `2xs`, `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`, `4xl`, `5xl`, `6xl`
 
 ## Spacing
 
@@ -254,7 +268,7 @@ $breakpoint-md: 800px;
 $spacing-unit: 10px;
 $grid-columns-lg: 16;
 
-@use "minimal-scss/scss/common";
+@use "@yassine-gallaoui/minimal-scss/scss/main";
 ```
 
 ### Available Variables
