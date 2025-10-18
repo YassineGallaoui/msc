@@ -23,3 +23,13 @@ $font-sizes: (
     font-size: $value;
   }
 }
+
+@each $breakpoint, $bp-value in variables.$breakpoints {
+  @media (min-width: $bp-value) {
+    @each $key, $value in $font-sizes {
+      .#{$breakpoint}-fs-#{$key} {
+        font-size: $value !important;
+      }
+    }
+  }
+}
