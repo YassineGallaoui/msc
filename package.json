@@ -1,6 +1,6 @@
 {
   "name": "msccss",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A collection of basic SCSS utilities for grid, flexbox, positioning, text and more.",
   "main": "dist/main.min.css",
   "style": "dist/main.min.css",

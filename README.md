@@ -27,7 +27,7 @@ npm install msccss
 
 ## Usage
 
-### Import pre-built CSS in JavaScript (Recommended)
+### Import pre-built CSS in JavaScript
 
 The easiest way to use msc is to import the pre-built CSS file in your main JavaScript file:
 
@@ -43,35 +43,6 @@ This approach:
 - ✅ **No conflicts**: Avoids SCSS compilation issues
 - ✅ **Bundle integration**: Works with Vite, Webpack, Parcel, etc.
 
-### Import the complete library (SCSS)
-
-```scss
-@use "msccss/scss/main";
-```
-
-### Import pre-built CSS (in SCSS/CSS files)
-
-```scss
-@import "msccss/dist/main.min.css";
-```
-
-### Import individual modules
-
-```scss
-@use "msccss/scss/utils/variables";
-@use "msccss/scss/utils/base";
-@use "msccss/scss/utils/flex";
-@use "msccss/scss/utils/text";
-@use "msccss/scss/utils/spacing";
-```
-
-### Import individual pre-built CSS modules
-
-```scss
-@import "msccss/dist/flex.min.css";
-@import "msccss/dist/text.min.css";
-@import "msccss/dist/spacing.min.css";
-```
 
 ## Breakpoints
 
@@ -79,11 +50,11 @@ The library uses a mobile-first responsive approach with the following breakpoin
 
 | Breakpoint | Size     | Usage           |
 |------------|----------|-----------------|
-| `sm`       | ≥577px   | Small tablets   |
-| `md`       | ≥769px   | Tablets         |
-| `lg`       | ≥993px   | Small desktops  |
-| `xl`       | ≥1201px  | Large desktops  |
-| `xxl`      | ≥1441px  | Extra large     |
+| `sm`       | >576px   | Small tablets   |
+| `md`       | >768px   | Tablets         |
+| `lg`       | >992px   | Small desktops  |
+| `xl`       | >1200px  | Large desktops  |
+| `xxl`      | >1440px  | Extra large     |
 
 ## Flexbox Utilities
 
@@ -262,16 +233,10 @@ The library includes a CSS reset and base styles:
 - Box-sizing border-box reset
 - Smooth scrolling
 - Responsive body layout with flexbox
-- Image max-width 100%
-- List styling with consistent spacing
 
 ## Browser Support
 
 The library uses CSS custom properties and modern flexbox features that are well-supported across modern browsers.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
@@ -280,7 +245,3 @@ ISC
 ## Author
 
 Yassine Gallaoui
-
-## Repository
-
-[GitHub Repository](https://github.com/YassineGallaoui/msc)
