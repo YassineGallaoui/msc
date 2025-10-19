@@ -3,14 +3,14 @@
 
 
 .flex {
-  display: flex;
+  display: flex !important;
 }
 
 // Generate responsive display classes
 @each $breakpoint, $bp in variables.$breakpoints {
   @media (min-width: #{$bp}) {
     .#{$breakpoint}-flex {
-      display: flex;
+      display: flex !important;
     }
   }
 }
