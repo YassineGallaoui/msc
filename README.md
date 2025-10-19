@@ -1,19 +1,23 @@
 # Minimal Styling Classes (MSCCSS)
 
-A lightweight collection of SCSS/css utilitiy classes for modern web development. Bootstrap or Tailwind, buy lighter. This library provides essential utility classes for grid systems, flexbox, typography, spacing, and more.  
+A lightweight collection of SCSS/css utility classes for modern web development. Bootstrap or Tailwind, but lighter. This library provides essential utility classes for flexbox, typography, spacing, and base styles.  
 This is not meant to have everything you need, each SCSS/css rule was added only after answering the question: "will I use this intensively?". If the answer is no, then you will not find that styling rule in this library.
 
 ## Features
 
-- 🎨 **Modern Grid System** - CSS Grid-based system with 4/8/12 columns across breakpoints
 - 🔧 **Flexbox Utilities** - Complete flexbox property classes with responsive variants  
 - 📝 **Typography System** - Scalable font sizes from 2xs to 6xl
 - 📏 **Spacing Utilities** - Comprehensive margin, padding, and position classes (0-160px)
-- 🎯 **Router Utilities** - Page transition animations for SPA routing
-- 📊 **Stats Components** - Debug overlay for displaying screen stats and FPS
 - 🌙 **Dark Mode Support** - Built-in dark mode color scheme support
 - 📱 **Responsive Design** - Mobile-first approach with 5 breakpoint system
 - 🎨 **CSS Custom Properties** - Modern theming with CSS variables
+
+## Related Projects
+
+For additional functionality that was previously part of this library:
+
+- **[Vanilla JS Helpers](https://github.com/YassineGallaoui/vanilla-js-helpers)** - Grid system, stats overlay, and client-side router for vanilla JavaScript projects
+- **[Next FE Helpers](https://github.com/YassineGallaoui/next-fe-helpers)** - Grid system and stats overlay components for Next.js projects
 
 ## Installation
 
@@ -56,19 +60,16 @@ This approach:
 ```scss
 @use "msccss/scss/utils/variables";
 @use "msccss/scss/utils/base";
-@use "msccss/scss/utils/grid";
 @use "msccss/scss/utils/flex";
 @use "msccss/scss/utils/text";
 @use "msccss/scss/utils/spacing";
-@use "msccss/scss/utils/router";
-@use "msccss/scss/utils/stats";
 ```
 
 ### Import individual pre-built CSS modules
 
 ```scss
-@import "msccss/dist/grid.min.css";
 @import "msccss/dist/flex.min.css";
+@import "msccss/dist/text.min.css";
 @import "msccss/dist/spacing.min.css";
 ```
 
@@ -83,50 +84,6 @@ The library uses a mobile-first responsive approach with the following breakpoin
 | `lg`       | ≥993px   | Small desktops  |
 | `xl`       | ≥1201px  | Large desktops  |
 | `xxl`      | ≥1441px  | Extra large     |
-
-## Grid System
-
-### Container
-
-```html
-<div class="container">
-  <!-- Your content here -->
-</div>
-```
-
-### Grid Classes
-
-```html
-<div class="row">
-  <div class="col-12 sm-col-4 md-col-6 lg-col-4">Column</div>
-  <div class="col-12 sm-col-4 md-col-2 lg-col-8">Column</div>
-</div>
-```
-
-### Grid System Details
-
-The grid system uses CSS Grid with different column counts per breakpoint:
-- **Default (mobile)**: 4 columns
-- **sm and up**: 8 columns  
-- **md and up**: 12 columns
-
-### Offset Classes
-
-```html
-<div class="row">
-  <div class="col-6 offset-3">Centered column with offset</div>
-  <div class="col-4 lg-offset-2">Column with responsive offset</div>
-</div>
-```
-
-### Sub-grid
-
-```html
-<div class="col-6 sub-grid">
-  <div class="col-3">Nested grid item</div>
-  <div class="col-3">Nested grid item</div>
-</div>
-```
 
 ## Flexbox Utilities
 
@@ -283,7 +240,6 @@ You can customize the library by overriding SCSS variables:
 // Override before importing
 $breakpoint-md: 800px;
 $spacing-unit: 10px;
-$grid-columns-lg: 16;
 
 @use "msccss/scss/main";
 ```
@@ -298,49 +254,9 @@ $line-height-base: 1.5;
 
 // Spacing
 $spacing-unit: 8px;
-$container-padding: 15px;
-
-// Grid
-$grid-columns-sm: 4;
-$grid-columns-md: 8;
-$grid-columns-lg: 12;
 ```
 
-## Additional Components
-
-### Router Utilities
-
-For single-page applications with custom routing:
-
-```html
-<div class="page-container" id="current-content">
-  <!-- Current page content -->
-</div>
-<div class="page-container" id="new-content">
-  <!-- New page content -->
-</div>
-```
-
-CSS classes for page transitions:
-- `.page-container` - Base container for pages
-- `.page-exit` - Applied when page is leaving (fade out + slide up)
-- `.page-enter` - Applied when page is entering (fade in + slide down)
-
-### Stats Component
-
-Development overlay for displaying screen information:
-
-```html
-<div class="stats show">
-  <!-- Stats content populated by JavaScript -->
-</div>
-```
-
-- `.stats` - Hidden by default
-- `.stats.show` - Visible overlay positioned top-right
-- Designed to work with a JavaScript stats system
-
-### Base Styles
+## Base Styles
 
 The library includes a CSS reset and base styles:
 - Box-sizing border-box reset
@@ -351,27 +267,7 @@ The library includes a CSS reset and base styles:
 
 ## Browser Support
 
-Due to modern CSS features used in this library, browser support is limited to:
-
-- **Chrome 117+** (August 2023)
-- **Firefox 113+** (May 2023)  
-- **Safari 16.2+** (December 2022)
-- **Edge 117+** (September 2023)
-
-### Modern CSS Features Used
-
-- **CSS Subgrid** (sub-grid classes)
-- **Dynamic Viewport Units** (`100dvh`, `100dvw`)
-- **CSS `color-mix()` function** (grid overlay)
-- **`backdrop-filter`** (stats component)
-
-### Graceful Degradation
-
-Most utility classes will work in older browsers, but some advanced features may not function:
-- Grid overlay visualization requires `color-mix()` support
-- Sub-grid classes fall back to regular grid
-- Dynamic viewport units fall back to regular viewport units
-- Stats component backdrop blur won't work without `backdrop-filter`
+The library uses CSS custom properties and modern flexbox features that are well-supported across modern browsers.
 
 ## Contributing
 
