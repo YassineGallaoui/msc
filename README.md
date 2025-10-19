@@ -1,4 +1,4 @@
-# Minimal Styling Classes (MSC)
+# Minimal Styling Classes (MSCCSS)
 
 A lightweight collection of SCSS/css utilitiy classes for modern web development. Bootstrap or Tailwind, buy lighter. This library provides essential utility classes for grid systems, flexbox, typography, spacing, and more.  
 This is not meant to have everything you need, each SCSS/css rule was added only after answering the question: "will I use this intensively?". If the answer is no, then you will not find that styling rule in this library.
@@ -18,7 +18,7 @@ This is not meant to have everything you need, each SCSS/css rule was added only
 ## Installation
 
 ```bash
-npm install @yassine-gallaoui/msc
+npm install msccss
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ The easiest way to use msc is to import the pre-built CSS file in your main Java
 
 ```javascript
 // Import in your main JS file (e.g., main.js, app.js, common.js)
-import '@yassine-gallaoui/msc/dist/main.min.css';
+import 'msccss/dist/main.min.css';
 ```
 
 This approach:
@@ -42,34 +42,34 @@ This approach:
 ### Import the complete library (SCSS)
 
 ```scss
-@use "@yassine-gallaoui/msc/scss/main";
+@use "msccss/scss/main";
 ```
 
 ### Import pre-built CSS (in SCSS/CSS files)
 
 ```scss
-@import "@yassine-gallaoui/msc/dist/main.min.css";
+@import "msccss/dist/main.min.css";
 ```
 
 ### Import individual modules
 
 ```scss
-@use "@yassine-gallaoui/msc/scss/utils/variables";
-@use "@yassine-gallaoui/msc/scss/utils/base";
-@use "@yassine-gallaoui/msc/scss/utils/grid";
-@use "@yassine-gallaoui/msc/scss/utils/flex";
-@use "@yassine-gallaoui/msc/scss/utils/text";
-@use "@yassine-gallaoui/msc/scss/utils/spacing";
-@use "@yassine-gallaoui/msc/scss/utils/router";
-@use "@yassine-gallaoui/msc/scss/utils/stats";
+@use "msccss/scss/utils/variables";
+@use "msccss/scss/utils/base";
+@use "msccss/scss/utils/grid";
+@use "msccss/scss/utils/flex";
+@use "msccss/scss/utils/text";
+@use "msccss/scss/utils/spacing";
+@use "msccss/scss/utils/router";
+@use "msccss/scss/utils/stats";
 ```
 
 ### Import individual pre-built CSS modules
 
 ```scss
-@import "@yassine-gallaoui/msc/dist/grid.min.css";
-@import "@yassine-gallaoui/msc/dist/flex.min.css";
-@import "@yassine-gallaoui/msc/dist/spacing.min.css";
+@import "msccss/dist/grid.min.css";
+@import "msccss/dist/flex.min.css";
+@import "msccss/dist/spacing.min.css";
 ```
 
 ## Breakpoints
@@ -285,7 +285,7 @@ $breakpoint-md: 800px;
 $spacing-unit: 10px;
 $grid-columns-lg: 16;
 
-@use "@yassine-gallaoui/msc/scss/main";
+@use "msccss/scss/main";
 ```
 
 ### Available Variables
