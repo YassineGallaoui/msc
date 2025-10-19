@@ -1,5 +1,5 @@
 {
-  "name": "@y-g/msc",
+  "name": "msccss",
   "version": "1.0.0",
   "description": "A collection of basic SCSS utilities for grid, flexbox, positioning, text and more.",
   "main": "dist/main.min.css",
