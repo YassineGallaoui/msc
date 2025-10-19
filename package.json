@@ -1,17 +1,17 @@
 {
-  "name": "@yassine-gallaoui/minimal-scss",
-  "version": "1.0.2",
+  "name": "@y-g/msc",
+  "version": "1.0.0",
   "description": "A collection of basic SCSS utilities for grid, flexbox, positioning, text and more.",
   "main": "dist/main.min.css",
   "style": "dist/main.min.css",
   "sass": "scss/main.scss",
-  "homepage": "https://github.com/YassineGallaoui/minimal-scss#readme",
+  "homepage": "https://github.com/YassineGallaoui/msc#readme",
   "bugs": {
-    "url": "https://github.com/YassineGallaoui/minimal-scss/issues"
+    "url": "https://github.com/YassineGallaoui/msc/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YassineGallaoui/minimal-scss.git"
+    "url": "git+https://github.com/YassineGallaoui/msc.git"
   },
   "files": [
     "dist/",
