@@ -1,6 +1,6 @@
 {
   "name": "msccss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A collection of basic SCSS utilities for grid, flexbox, positioning, text and more.",
   "main": "dist/main.min.css",
   "style": "dist/main.min.css",
@@ -20,7 +20,8 @@
   "license": "ISC",
   "author": "Yassine Gallaoui",
   "scripts": {
-    "build": "sass --no-source-map --style=compressed scss/main.scss dist/main.min.css && sass --no-source-map --style=compressed scss/utils/_base.scss dist/base.min.css && sass --no-source-map --style=compressed scss/utils/_flex.scss dist/flex.min.css && sass --no-source-map --style=compressed scss/utils/_grid.scss dist/grid.min.css && sass --no-source-map --style=compressed scss/utils/_router.scss dist/router.min.css && sass --no-source-map --style=compressed scss/utils/_spacing.scss dist/spacing.min.css && sass --no-source-map --style=compressed scss/utils/_stats.scss dist/stats.min.css && sass --no-source-map --style=compressed scss/utils/_text.scss dist/text.min.css",
+    "sass-build": "sass --no-source-map --style=compressed",
+    "build": "npm run sass-build scss/main.scss dist/main.min.css && npm run sass-build scss/utils/_base.scss dist/base.min.css && npm run sass-build scss/utils/_flex.scss dist/flex.min.css && npm run sass-build scss/utils/_spacing.scss dist/spacing.min.css && npm run sass-build scss/utils/_text.scss dist/text.min.css",
     "watch": "sass --watch --no-source-map --style=compressed scss/:dist/ --output-suffix=.min",
     "prepublishOnly": "npm run build"
   },

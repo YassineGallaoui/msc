@@ -1,5 +1,11 @@
 @use "variables" as *;
 
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
 // Reset
 *,
 *::before,
@@ -51,3 +57,4 @@ img {
   height: auto;
   vertical-align: middle;
 }
+
