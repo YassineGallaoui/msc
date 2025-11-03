@@ -39,18 +39,40 @@ $grid-columns-lg: 12;
   --danger-color: #dc3545;
   --warning-color: #ffc107;
   --info-color: #17a2b8;
-  // Transition Duration
-  --transition-duration: 0.3s;
-}
 
-// Theme Colors light mode
-:root {
+  // Theme Colors light mode
   --background-color: #ebecd6;
   --foreground-color: #0a100d;
   --accent-light-color: #7ba9f4;
   --accent-color: #3066be;
   --accent-dark-color: #0e4193;
+
+  // Transition Duration
+  --transition-duration: 0.3s;
+
+  // Spacing
+  --spacing-unit: 8px;
+  --container-padding: 15px;
+
+  // Typography
+  --font-family-base: -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+
+  // Breakpoints
+  --breakpoint-sm: 577px;
+  --breakpoint-md: 769px;
+  --breakpoint-lg: 993px;
+  --breakpoint-xl: 1201px;
+  --breakpoint-xxl: 1441px;
+  
+  // Grid columns
+  --grid-columns-sm: 4;
+  --grid-columns-md: 8;
+  --grid-columns-lg: 12;
 }
+
+
 
 // Theme Colors dark mode
 @media (prefers-color-scheme: dark) {

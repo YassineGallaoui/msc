@@ -5,6 +5,24 @@
   "main": "dist/main.min.css",
   "style": "dist/main.min.css",
   "sass": "scss/main.scss",
+  "exports": {
+    ".": {
+      "sass": "./scss/main.scss",
+      "style": "./dist/main.min.css",
+      "default": "./dist/main.min.css"
+    },
+    "./variables": "./scss/utils/_variables.scss",
+    "./base": "./scss/utils/_base.scss",
+    "./flex": "./scss/utils/_flex.scss",
+    "./spacing": "./scss/utils/_spacing.scss",
+    "./text": "./scss/utils/_text.scss",
+    "./dist/*": "./dist/*",
+    "./scss/*": "./scss/*"
+  },
+  "files": [
+    "dist/",
+    "scss/"
+  ],
   "homepage": "https://github.com/YassineGallaoui/msc#readme",
   "bugs": {
     "url": "https://github.com/YassineGallaoui/msc/issues"
@@ -13,21 +31,18 @@
     "type": "git",
     "url": "git+https://github.com/YassineGallaoui/msc.git"
   },
-  "files": [
-    "dist/",
-    "scss/"
-  ],
   "license": "ISC",
   "author": "Yassine Gallaoui",
   "scripts": {
     "sass-build": "sass --no-source-map --style=compressed",
-    "build": "npm run sass-build scss/main.scss dist/main.min.css && npm run sass-build scss/utils/_base.scss dist/base.min.css && npm run sass-build scss/utils/_flex.scss dist/flex.min.css && npm run sass-build scss/utils/_spacing.scss dist/spacing.min.css && npm run sass-build scss/utils/_text.scss dist/text.min.css",
+    "build": "npm run sass-build scss/main.scss dist/main.min.css",
     "watch": "sass --watch --no-source-map --style=compressed scss/:dist/ --output-suffix=.min",
     "prepare": "npm run build",
     "release": "npm version patch -m \"chore: release v%s\" && npm publish --access public",
     "release:minor": "npm version minor -m \"feat: release v%s\" && npm publish --access public",
     "release:major": "npm version major -m \"BREAKING: release v%s\" && npm publish --access public",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "pack": "npm run build && npm pack"
   },
   "keywords": [
     "scss",
