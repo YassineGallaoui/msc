@@ -29,11 +29,11 @@ npm install msccss
 
 ### Import pre-built CSS in JavaScript
 
-The easiest way to use msc is to import the pre-built CSS file in your main JavaScript file:
+The easiest way to use msc is to import the pre-built CSS file in your main and shared JavaScript file:
 
 ```javascript
 // Import in your main JS file (e.g., main.js, app.js, common.js)
-import 'msccss/dist/main.min.css';
+import '/node_modules/msccss/dist/main.min.css';
 ```
 
 This approach:
