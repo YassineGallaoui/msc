@@ -38,9 +38,9 @@
     "build": "npm run sass-build scss/main.scss dist/main.min.css",
     "watch": "sass --watch --no-source-map --style=compressed scss/:dist/ --output-suffix=.min",
     "prepare": "npm run build",
-    "release": "npm version patch -m \"chore: release v%s\" && npm publish --access public",
-    "release:minor": "npm version minor -m \"feat: release v%s\" && npm publish --access public",
-    "release:major": "npm version major -m \"BREAKING: release v%s\" && npm publish --access public",
+    "release": "git diff-index --quiet HEAD -- || (echo \"Git working directory not clean\" && exit 1) && npm whoami > /dev/null 2>&1 || npm login && npm version patch -m \"chore: release v%s\" && npm publish --access public",
+    "release:minor": "git diff-index --quiet HEAD -- || (echo \"Git working directory not clean\" && exit 1) && npm whoami > /dev/null 2>&1 || npm login && npm version minor -m \"feat: release v%s\" && npm publish --access public",
+    "release:major": "git diff-index --quiet HEAD -- || (echo \"Git working directory not clean\" && exit 1) && npm whoami > /dev/null 2>&1 || npm login && npm version major -m \"BREAKING: release v%s\" && npm publish --access public",
     "postversion": "git push && git push --tags",
     "pack": "npm run build && npm pack"
   },
