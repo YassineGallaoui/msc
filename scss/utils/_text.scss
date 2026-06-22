@@ -1,3 +1,4 @@
+@use "sass:list";
 @use "./variables";
 
 // ==========================================================================
@@ -34,5 +35,46 @@ $font-sizes: (
         font-size: $value !important;
       }
     }
+  }
+}
+
+// ==========================================================================
+// FLUID TYPOGRAPHY
+// ==========================================================================
+
+// Display-oriented font sizes that scale smoothly with the viewport using
+// clamp(). Each entry is (min-rem, max-rem): the font-size grows linearly
+// between the min and max viewport widths defined below, then clamps.
+$font-sizes-fluid: (
+  "sm": (1.25, 1.5),
+  "md": (1.5, 2.25),
+  "lg": (2, 3),
+  "xl": (2.5, 4),
+  "2xl": (3, 5),
+);
+
+// Viewport interpolation range (in rem, relative to --font-size-base).
+// Exposed as custom properties so consumers can override the breakpoints
+// at runtime without recompiling: e.g. `--fs-fluid-max-vw: 80;`.
+:root {
+  --fs-fluid-min-vw: 20; // 320px @ 16px base
+  --fs-fluid-max-vw: 96; // 1536px @ 16px base
+}
+
+// Generate fluid utility classes for display sizes.
+@each $size, $range in $font-sizes-fluid {
+  $min: list.nth($range, 1);
+  $max: list.nth($range, 2);
+  $diff: $max - $min;
+
+  .fs-fluid-#{$size} {
+    font-size: clamp(
+      #{$min}rem,
+      calc(
+        #{$min}rem + #{$diff} *
+          ((100vw - var(--fs-fluid-min-vw) * 1rem) / (var(--fs-fluid-max-vw) - var(--fs-fluid-min-vw)))
+      ),
+      #{$max}rem
+    );
   }
 }

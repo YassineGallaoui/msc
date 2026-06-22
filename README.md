@@ -6,7 +6,7 @@ This is not meant to have everything you need, each SCSS/css rule was added only
 ## Features
 
 - 🔧 **Flexbox Utilities** - Complete flexbox property classes with responsive variants  
-- 📝 **Typography System** - Scalable font sizes from 2xs to 6xl
+- 📝 **Typography System** - Scalable font sizes from 2xs to 6xl, plus fluid `clamp()`-based display sizes
 - 📏 **Spacing Utilities** - Comprehensive margin, padding, and position classes (0-160px)
 - 🌙 **Dark Mode Support** - Built-in dark mode color scheme support
 - 📱 **Responsive Design** - Mobile-first approach with 5 breakpoint system
@@ -132,6 +132,39 @@ Available options: `ac-start`, `ac-center`, `ac-end`, `ac-stretch`, `ac-between`
 ```
 
 Available sizes: `2xs`, `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`, `4xl`, `5xl`, `6xl`
+
+### Fluid Font Sizes
+
+For hero and display headings, the fixed `fs-*` scale can feel too rigid. The `fs-fluid-*` classes scale smoothly with the viewport using `clamp()`, interpolating linearly between a minimum and maximum size:
+
+```html
+<h1 class="fs-fluid-2xl">Hero heading that scales with the viewport</h1>
+<h2 class="fs-fluid-lg">Section heading</h2>
+```
+
+Available sizes and their min → max ranges (in `rem`, relative to `--font-size-base`):
+
+| Class           | Min      | Max      |
+|-----------------|----------|----------|
+| `fs-fluid-sm`   | 1.25rem  | 1.5rem   |
+| `fs-fluid-md`   | 1.5rem   | 2.25rem  |
+| `fs-fluid-lg`   | 2rem     | 3rem     |
+| `fs-fluid-xl`   | 2.5rem   | 4rem     |
+| `fs-fluid-2xl`  | 3rem     | 5rem     |
+
+The size grows linearly between two viewport widths and clamps outside that range. The interpolation breakpoints are exposed as CSS custom properties so you can override them at runtime without recompiling:
+
+```css
+:root {
+  --fs-fluid-min-vw: 20; /* default: 320px @ 16px base — size sits at min below this */
+  --fs-fluid-max-vw: 96; /* default: 1536px @ 16px base — size sits at max above this */
+}
+
+/* e.g. reach the max size earlier, at a 1280px viewport */
+.hero {
+  --fs-fluid-max-vw: 80;
+}
+```
 
 ## Spacing
 
